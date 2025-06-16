@@ -12,7 +12,7 @@ local scriptFile = gameScripts[game.PlaceId]
 if scriptFile then
     loadstring(game:HttpGet(baseURL .. scriptFile))()
 else
-    plr:Kick("this game is not supported, if this is the right game and ur getting this error report it here to me. https://discord.gg/ZEWJGgsP7e")
+    game.Players.LocalPlayer:Kick("this game is not supported, if this is the right game and ur getting this error report it here to me. https://discord.gg/ZEWJGgsP7e")
 end
 
 for _, conn in next, getconnections(plr.Idled) do
