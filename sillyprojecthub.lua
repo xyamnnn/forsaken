@@ -1,5 +1,5 @@
 local gameScripts = {
-    [186874171582] = "forsaken.lua",
+    [18687417158] = "forsaken.lua",
     -- placeholder
 }
 
