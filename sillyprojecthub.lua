@@ -7,6 +7,8 @@ local Players = game:GetService("Players")
 local VirtualUser = game:GetService("VirtualUser")
 local plr = Players.LocalPlayer
 
+getgenv().SillyHubLoader = true
+
 local function loadScript(url, retries)
     retries = retries or 3
     local success, result = pcall(game.HttpGet, game, url)
@@ -20,7 +22,14 @@ local function loadScript(url, retries)
         return
     end
     
-    local execSuccess, execError = pcall(loadstring(result))
+    local execSuccess, execError = pcall(function()
+        local func = loadstring(result)
+        if func then
+            func()
+        else
+            error("loadstring returned nil")
+        end
+    end)
     if not execSuccess then
         plr:Kick("Script execution failed: " .. tostring(execError))
     end
@@ -48,4 +57,4 @@ if not scriptFile then
 end
 
 setupAntiIdle()
-loadScript(baseURL .. scriptFile)
+loadScript(baseURL .. scriptFile) 
