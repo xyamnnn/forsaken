@@ -7,6 +7,7 @@ local Players = game:GetService("Players")
 local VirtualUser = game:GetService("VirtualUser")
 local plr = Players.LocalPlayer
 
+-- Set loader flag to allow script execution
 getgenv().SillyHubLoader = true
 
 local function loadScript(url, retries)
@@ -22,6 +23,7 @@ local function loadScript(url, retries)
         return
     end
     
+    -- loadstring and run inside a function to keep getgenv shared
     local execSuccess, execError = pcall(function()
         local func = loadstring(result)
         if func then
