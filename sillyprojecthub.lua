@@ -33,7 +33,7 @@ local function loadScript(url, retries)
         end
     end)
     if not execSuccess then
-        plr:Kick("Script execution failed: " .. tostring(execError))
+        warn("Script execution failed: " .. tostring(execError))
     end
 end
 
