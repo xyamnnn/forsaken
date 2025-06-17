@@ -1,6 +1,6 @@
 local function validateLoader()
     if not getgenv().SillyHubLoader then
-        game:GetService("Players").LocalPlayer:Kick("❌ access denied: please use the official silly hub loader!\n\nget it from: https://discord.gg/ZEWJGgsP7e (also try u skiding?")
+        game:GetService("Players").LocalPlayer:Kick("❌ access denied: please use the official silly hub loader!\n\nget it from: https://discord.gg/ZEWJGgsP7e (also try u skiding?)")
         return false
     end
     return true
